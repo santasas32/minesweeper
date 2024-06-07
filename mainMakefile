@@ -1,0 +1,9 @@
+app: tests
+	minesweeper.exe
+tests: create 
+	./LOGIC/tests/run_tests.exe ./LOGIC/tests/run_tests.exe ./workWithUser/tests/run_tests.exe
+#./workWithUser/tests/run_tests.exe
+create:
+	mingw32-make -f Makefile
+	mingw32-make -C ./workWithUser/tests/ -f Makefile
+	mingw32-make -C ./logic/tests/ -f Makefile
