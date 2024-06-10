@@ -16,8 +16,8 @@ while (active)
 {	system("cls");
 	int length, width, mineAmount, x = 9, y = 9, errorCode = 0;
 	bool firstStep = true, youAreAlreadyDead = false, dead = false, win = false;
-	char ** GRID_BE = NULL; // Бэкэндовая сетка
-	char ** GRID_FE = NULL; // Фронтэндавая сетка
+	char ** GRID_BE = NULL; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+	char ** GRID_FE = NULL; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 	char type;
 	int userChoice, difInput = 0;
 	do { system("CLS"); errorCode = showMenu(&userChoice, &difInput);

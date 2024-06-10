@@ -1,4 +1,4 @@
-CFLAGS = -I ./CONTROLLER -I ./LOGIC -I ./workWithUser -I ./errorProc -g -c
+CFLAGS = -I ./CONTROLLER -I ./LOGIC -I ./workWithUser -I ./errorProc -c
 CONTROLLER_DIR = ./CONTROLLER/
 LOGIC_DIR = ./LOGIC/
 workWithUser_DIR = ./workWithUser/
@@ -7,7 +7,6 @@ object_deps = CONTROLLER.o workWithUser.o LOGIC.o errorProc.o
 
 minesweeper.exe: $(object_deps)
 	gcc -o minesweeper *.o
-	del *.o
 
 CONTROLLER.o: $(CONTROLLER_DIR)CONTROLLER.c
 	gcc $(CFLAGS) $(CONTROLLER_DIR)CONTROLLER.c

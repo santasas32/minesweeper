@@ -1,0 +1,15 @@
+runTests: createTests    
+	./LOGIC/tests/run_tests.exe
+	./errorProc/tests/run_tests.exe
+	./CONTROLLER/tests/run_tests.exe
+	./workWithUser/tests/run_tests.exe
+createTests:
+	mingw32-make -C ./workWithUser/tests/ -f testMakefile
+	mingw32-make -C ./errorProc/tests/ -f testMakefile
+	mingw32-make -C ./logic/tests/ -f testMakefile
+	mingw32-make -C ./CONTROLLER/tests/ -f testMakefile
+clean:
+	del .\workWithUser\tests\run_tests.exe
+	del .\LOGIC\tests\run_tests.exe
+	del .\errorProc\tests\run_tests.exe
+	del .\CONTROLLER\tests\run_tests.exe

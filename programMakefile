@@ -1,0 +1,11 @@
+CC = gcc
+C_HEADER_FLAGS = -I ./CONTROLLER/ -I ./LOGIC/ -I ./workWithUser/ -I ./errorProc/ -c
+LIBS = ./LOGIC/libs/LOGIC.lib ./workWithUser/libs/workWithUser.lib ./errorProc/libs/errorProc.lib
+object_deps = ./CONTROLLER/CONTROLLER.o
+
+minesweeper.exe: $(object_deps)
+	$(CC) -o $@ $(object_deps) $(LIBS)
+$(object_deps):
+	$(CC) $(C_HEADER_FLAGS) -o $@ ./CONTROLLER/CONTROLLER.c
+clean:
+	del minesweeper.exe, .\CONTROLLER\CONTROLLER.o

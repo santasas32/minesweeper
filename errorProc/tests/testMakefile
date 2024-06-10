@@ -1,0 +1,7 @@
+CFLAGS = -I../ -I../../workWithUser/
+deps = ../errorProc.c ../errorProc.h run_tests.c
+DIR = ../
+tests.exe: $(deps)
+	gcc $(CFLAGS) -o run_tests run_tests.c $(DIR)errorProc.c
+clean:
+	del run_tests.exe

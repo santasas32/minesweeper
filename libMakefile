@@ -1,0 +1,8 @@
+createLibs:
+	mingw32-make -C ./workWithUser/ -f libMakefile
+	mingw32-make -C ./errorProc/ -f libMakefile
+	mingw32-make -C ./logic/ -f libMakefile
+clean:
+	mingw32-make -C ./workWithUser/ -f libMakefile clean
+	mingw32-make -C ./errorProc/ -f libMakefile clean
+	mingw32-make -C ./logic/ -f libMakefile clean

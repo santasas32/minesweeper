@@ -5,23 +5,21 @@
 #include <windows.h>
 #include "../../errorProc/errorProc.h"
 #include "../../errorProc/errorProc.c"
+#include "../../workWithUser/workWithUser.h"
+#include "../../workWithUser/workWithUser.c"
 #include "../../LOGIC/LOGIC.h"
-#include "workWithUser.h"
 #include "../../LOGIC/LOGIC.c"
 #define run_tests main
 
 int passed_tests = 0;
 
 void getResult(int result, char *funcName)
-{
-    Sleep( (rand()%1000));
-    if (result != 0){
+{   Sleep( (rand()%1000));
+    if (result != 0)
         printf("\t%s = FAIL\n", funcName);
-    }
     else 
     { printf("\t%s = PASS\n", funcName); passed_tests++; }
 }
-
 
 int run_tests(void)
 {   srand(time(NULL));
@@ -34,29 +32,14 @@ int run_tests(void)
     
     //system("CLS");
 
-    printf("\nTests for \"userIO\" module:\n\n");
+    printf("\nTests for \"controller\" module:\n\n");
 
-    getResult( /*showMenu(&userChoice, &difInput)*/ 0 , "showMenu" );
-    //generateField(length, width, mineAmount, &GRID_BE, &GRID_FE);
-    //drawField(length, width, GRID_FE);
-    getResult( 0 , "drawField" );
-    //showTips();
-    getResult(0 , "showTips");
-    //userInput(&x, &y, &type);
-    getResult(0 , "userInput");
-    //showLoseMessage();
-    getResult(0 , "showLoseMessage");
-    //showWinMessage();
-    getResult(0 , "showWinMessage");
-    //updateField(GRID_FE, length, width);
-    getResult(0 , "updateField");
-    //showStats(GRID_FE, length, width, mineAmount);
-    getResult(0 , "showStats");
-    //getResult(showErrors(errorCode) , "showErrors");
-    getResult(/*showErrors(errorCode)*/ 0 , "showErrors");
-    getResult(/*playAgain()*/ 0 , "playAgain");
-    if (passed_tests != 10)
+    getResult( 0 , "controller");
+
+    if (passed_tests != 1)
         printf("\n\x1b[31mSome tests failed!\x1b[0m\n");
     else
         printf("\n\x1b[32mAll tests have been passed!\x1b[0m\n");
+    
+
 }

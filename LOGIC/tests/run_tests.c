@@ -9,13 +9,15 @@
 int passed_tests = 0;
 
 void getResult(int result, char *funcName)
-{   Sleep( (rand()%3000) + 1000 );
+{   Sleep( (rand()%1000));
+
+{   //Sleep( (rand()%3000) + 1000 );
     if (result != 0)
         printf("\t%s = FAIL\n", funcName);
     else 
     { printf("\t%s = PASS\n", funcName); passed_tests++; }
 }
-
+}
 int run_tests(void)
 {   srand(time(NULL));
     int length, width, mineAmount, x = 9, y = 9, errorCode = 0;
@@ -25,7 +27,7 @@ int run_tests(void)
 	char type = 'F';
 	int userChoice, difInput;
     
-    system("CLS");
+    //system("CLS");
 
     printf("\nTests for \"LOGIC\" module:\n\n");
 
@@ -42,5 +44,5 @@ int run_tests(void)
         printf("\n\x1b[31mSome tests failed!\x1b[0m\n");
     else
         printf("\n\x1b[32mAll tests have been passed!\x1b[0m\n");
-
+    
 }

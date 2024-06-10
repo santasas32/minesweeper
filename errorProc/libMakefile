@@ -1,0 +1,16 @@
+CC = gcc
+CFLAGS = -c -I../workWithUser/
+AR = ar rcs
+TARGET = errorProc.lib
+SRC = $(wildcard *.c)
+OBJ = $(wildcard *.o)
+LIB_DIR = ./libs/
+
+$(TARGET): OBJ
+	$(AR) $(LIB_DIR)$@ $(OBJ) 
+
+OBJ: $(SRC)
+	$(CC) $(CFLAGS) $(SRC)
+
+clean:
+	del /S *.o, *.lib
